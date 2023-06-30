@@ -1,17 +1,74 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.Scanner;
+//first task
+/*
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Введите число n: ");
+        int n = scanner.nextInt();
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        int triangularNumber = FirstTask.calculateTriangularNumber(n);
+        System.out.println("n-ое треугольное число: " + triangularNumber);
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        int factorial = FirstTask.calculateFactorial(n);
+        System.out.println("Факториал числа n: " + factorial);
+    }
+}
+*/
+//second task
+/*
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Простые числа от 1 до 1000:");
+        for (int i = 2; i <= 1000; i++) {
+            if (SecondTask.isPrime(i)) {
+                System.out.println(i);
+            }
         }
     }
 }
+*/
+
+// third task
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Введите первое число: ");
+        double num1 = scanner.nextDouble();
+
+        System.out.print("Введите второе число: ");
+        double num2 = scanner.nextDouble();
+
+        System.out.print("Выберите операцию (+, -, *, /): ");
+        char operator = scanner.next().charAt(0);
+
+        double result = 0.0;
+
+        switch (operator) {
+            case '+':
+                result = num1 + num2;
+                break;
+            case '-':
+                result = num1 - num2;
+                break;
+            case '*':
+                result = num1 * num2;
+                break;
+            case '/':
+                if (num2 != 0) {
+                    result = num1 / num2;
+                } else {
+                    System.out.println("Ошибка: деление на ноль!");
+                    return;
+                }
+                break;
+            default:
+                System.out.println("Ошибка: неверная операция!");
+                return;
+        }
+
+        System.out.println("Результат: " + result);
+    }
+}
+
